@@ -12,14 +12,9 @@ class Park
     @trails << trail
   end
 
-  def float_mileage(trail)
-    num_of_miles = trail.length.delete(' miles')
-    float_mileage = num_of_miles.to_f
-  end
-
   def trails_shorter_than(mileage)
     @trails.find_all do |trail|
-      float_mileage(trail) < mileage
+      trail.length_to_float < mileage
     end
   end
 
