@@ -21,6 +21,17 @@ class Park
   def hikeable_miles
     @trails.sum do |trail|
       trail.length_to_float
-    end 
+    end
+  end
+
+  def trails_by_level
+    trails_by_level = {}
+    @trails.each do |trail|
+      if trails_by_level[trail.level].nil?
+        trails_by_level[trail.level] = []
+      end 
+      trails_by_level[trail.level] << trail.name
+    end
+    trails_by_level
   end
 end
