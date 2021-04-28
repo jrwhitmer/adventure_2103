@@ -13,7 +13,11 @@ class Hiker
   end
 
   def pack(snack, quantity)
-    @snacks[snack] = quantity
+    if @snacks[snack].nil?
+      @snacks[snack] = quantity
+    else
+      @snacks[snack] += quantity
+    end
   end
 
   def visit(park)

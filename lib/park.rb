@@ -14,13 +14,13 @@ class Park
 
   def trails_shorter_than(mileage)
     @trails.find_all do |trail|
-      trail.length_to_float < mileage
+      trail.length < mileage
     end
   end
 
   def hikeable_miles
     @trails.sum do |trail|
-      trail.length_to_float
+      trail.length
     end
   end
 
@@ -29,7 +29,7 @@ class Park
     @trails.each do |trail|
       if trails_by_level[trail.level].nil?
         trails_by_level[trail.level] = []
-      end 
+      end
       trails_by_level[trail.level] << trail.name
     end
     trails_by_level

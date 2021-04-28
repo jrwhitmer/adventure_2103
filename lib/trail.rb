@@ -6,11 +6,8 @@ class Trail
 
   def initialize(attributes)
     @name = attributes[:name]
-    @length = attributes[:length]
+    @length = attributes[:length].delete(" miles").to_f
     @level = attributes[:level]
   end
 
-  def length_to_float
-    @length.delete(" miles").to_f
-  end
 end

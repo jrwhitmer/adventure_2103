@@ -36,6 +36,19 @@ RSpec.describe Hiker do
       expect(hiker.snacks).to eq({'water' => 1, 'trail mix' => 3})
     end
 
+    it 'can pack more of the same snack' do
+      hiker = Hiker.new('Dora', :moderate)
+
+      hiker.pack('water', 1)
+      hiker.pack('trail mix', 3)
+
+      expect(hiker.snacks).to eq({'water' => 1, 'trail mix' => 3})
+
+      hiker.pack('water', 2)
+
+      expect(hiker.snacks).to eq({'water' => 3, 'trail mix' => 3})
+    end
+
     it 'can visit a park' do
       hiker = Hiker.new('Dora', :moderate)
       park1 = Park.new('Capitol Reef')
@@ -67,7 +80,7 @@ RSpec.describe Hiker do
 
       hiker.visit(park1)
       hiker.visit(park2)
-      
+
       expect(hiker.possible_trails).to eq([trail2, trail4, trail6])
     end
 
