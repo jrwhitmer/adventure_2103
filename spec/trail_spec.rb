@@ -17,4 +17,10 @@ RSpec.describe Trail do
       expect(trail.level).to eq(:easy)
     end
   end
+
+  it 'can convert length attribute to float' do
+    trail = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+
+    expect(trail.length_to_float).to eq(2.2)
+  end
 end
