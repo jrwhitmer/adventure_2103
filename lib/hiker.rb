@@ -5,11 +5,15 @@ class Hiker
               :snacks,
               :parks_visited
 
-def initialize(name, experience_level)
-  @name = name
-  @experience_level = experience_level
-  @snacks = {}
-  @parks_visited = []
-end
+  def initialize(name, experience_level)
+    @name = name
+    @experience_level = experience_level
+    @snacks = {}
+    @parks_visited = []
+  end
+
+  def pack(snack, quantity)
+    @snacks[snack] = quantity
+  end
 
 end
