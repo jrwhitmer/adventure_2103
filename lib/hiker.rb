@@ -27,8 +27,8 @@ class Hiker
         trail.level == @experience_level
       end
       possible_trails << matching_trails
-    end.flatten
-    possible_trails
+    end
+    possible_trails.flatten
   end
 
   def favorite_snack

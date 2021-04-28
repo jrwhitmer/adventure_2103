@@ -47,7 +47,7 @@ RSpec.describe Hiker do
       expect(hiker.parks_visited).to eq([park1, park2])
     end
 
-    xit 'can return possible trails for all parks visited' do
+    it 'can return possible trails for all parks visited' do
       hiker = Hiker.new('Dora', :moderate)
       trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
       trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
@@ -67,7 +67,7 @@ RSpec.describe Hiker do
 
       hiker.visit(park1)
       hiker.visit(park2)
-      # this is returning new instances with the same attributes as the instances of trail above. No idea why.
+      
       expect(hiker.possible_trails).to eq([trail2, trail4, trail6])
     end
 
