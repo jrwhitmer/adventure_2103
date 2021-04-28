@@ -65,10 +65,20 @@ RSpec.describe Hiker do
       park2.add_trail(trail5)
       park2.add_trail(trail6)
 
-      hiker.vist(park1)
+      hiker.visit(park1)
       hiker.visit(park2)
-
+      # this is returning new instances with the same attributes as the instances of trail above. No idea why.
       expect(hiker.possible_trails).to eq([trail2, trail4, trail6])
+    end
+
+    it 'can return favorite snack' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 2)
+      hiker.pack('trail mix', 1)
+      hiker.pack('apple', 4)
+      hiker.pack('carrot', 3)
+
+      expect(hiker.favorite_snack).to eq('apple')
     end
   end
 end
