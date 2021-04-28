@@ -19,6 +19,8 @@ class Park
   end
 
   def hikeable_miles
-
+    @trails.sum do |trail|
+      trail.length_to_float
+    end 
   end
 end
