@@ -1,4 +1,6 @@
 require './lib/hiker'
+require './lib/park'
+require './lib/trail'
 require 'rspec'
 
 RSpec.describe Hiker do
@@ -21,6 +23,17 @@ RSpec.describe Hiker do
 
       expect(hiker.snacks).to eq({})
       expect(hiker.parks_visited).to eq([])
+    end
+  end
+
+  context 'methods' do
+    it 'can pack a snack' do
+      hiker = Hiker.new('Dora', :moderate)
+
+      hiker.pack('water', 1)
+      hiker.pack('trail mix', 3)
+
+      expect(hiker.snacks).to eq({'water' => 1, 'trail mix' => 3})
     end
   end
 end
