@@ -8,5 +8,12 @@ RSpec.describe Hiker do
 
       expect(hiker).to be_instance_of(Hiker)
     end
+
+    it 'has attributes' do
+      hiker = Hiker.new('Dora', :moderate)
+
+      expect(hiker.name).to eq('Dora')
+      expect(hiker.experience_level).to eq(:moderate)
+    end 
   end
 end
