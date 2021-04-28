@@ -30,4 +30,11 @@ class Hiker
     end.flatten
     possible_trails
   end
+
+  def favorite_snack
+    array_of_fave_snack_kv = @snacks.max_by do   |snack|
+      @snacks[snack[0]]
+    end
+    array_of_fave_snack_kv[0]
+  end
 end

@@ -47,7 +47,7 @@ RSpec.describe Hiker do
       expect(hiker.parks_visited).to eq([park1, park2])
     end
 
-    it 'can return possible trails for all parks visited' do
+    xit 'can return possible trails for all parks visited' do
       hiker = Hiker.new('Dora', :moderate)
       trail1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
       trail2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
