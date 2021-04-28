@@ -1,13 +1,15 @@
 class Trail
 
   attr_reader :name,
-              :length,
               :level
 
   def initialize(attributes)
     @name = attributes[:name]
-    @length = attributes[:length].delete(" miles").to_f
+    @length = attributes[:length]
     @level = attributes[:level]
   end
 
+  def length
+    @length.delete(" miles").to_f
+  end
 end
